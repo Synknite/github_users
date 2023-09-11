@@ -3,6 +3,7 @@ import { fetchUserList } from "../../lib/fetch";
 import { User } from "../../lib/types";
 import UserCard from "../../components/UserCard";
 import { Box, Container, Grid, Typography } from "@mui/material";
+import { nanoid } from "nanoid";
 
 export default function Home() {
   const [users, setUsers] = React.useState<User[]>([]);
@@ -37,7 +38,7 @@ export default function Home() {
         {/* End hero unit */}
         <Grid container spacing={4}>
           {users.map((user) => (
-            <Grid item key={user.id} xs={12} sm={6} md={4}>
+            <Grid item key={nanoid()} xs={12} sm={6} md={4}>
               <UserCard
                 avatar={user.avatar_url}
                 title={user.login}

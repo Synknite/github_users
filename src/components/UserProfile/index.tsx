@@ -16,7 +16,9 @@ import {
 import PersonIcon from "@mui/icons-material/Person";
 import GithubIcon from "@mui/icons-material/GitHub";
 import OrgIcon from "@mui/icons-material/PersonPin";
-import { Organization, Profile, Repo, User } from "../../lib/types";
+import { nanoid } from "nanoid";
+
+import { Organization, Repo, User } from "../../lib/types";
 
 interface ProfileProps {
   name: string;
@@ -28,7 +30,7 @@ interface ProfileProps {
   follows: User[] | undefined;
 }
 
-export default ({
+const UserProfile = ({
   name,
   avatar_url,
   public_gists,
@@ -81,7 +83,7 @@ export default ({
                   <>
                     {repos.map((repo) => (
                       <Link
-                        key={repo.id}
+                        key={nanoid()}
                         style={{ textDecoration: "none" }}
                         to={repo.html_url}
                       >
@@ -137,7 +139,7 @@ export default ({
                   <>
                     {follows.map((user) => (
                       <Link
-                        key={user.id}
+                        key={nanoid()}
                         to={user.html_url}
                         style={{ textDecoration: "none" }}
                       >
@@ -167,3 +169,5 @@ export default ({
     </div>
   );
 };
+
+export default UserProfile;

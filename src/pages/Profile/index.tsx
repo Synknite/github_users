@@ -6,7 +6,7 @@ import { BASE_URL } from "../../lib/fetch";
 import { Profile } from "../../lib/types";
 import UserProfile from "../../components/UserProfile";
 
-export default () => {
+const ProfilePage = () => {
   const { title } = useParams();
   const [profile, setProfile] = useState<Profile | undefined>(undefined);
   const [loading, setLoading] = useState(true);
@@ -14,17 +14,13 @@ export default () => {
   useEffect(() => {
     const fetchProfile = async () => {
       const url = BASE_URL + "/" + title;
-      const [
-        profileRes,
-        reposRes,
-        followsRes,
-        organizationRes,
-      ] = await Promise.all([
-        (await fetch(url)).json(),
-        (await fetch(url + "/repos")).json(),
-        (await fetch(url + "/followers?per_page=5")).json(),
-        (await fetch(url + "/orgs")).json(),
-      ]);
+      const [profileRes, reposRes, followsRes, organizationRes] =
+        await Promise.all([
+          (await fetch(url)).json(),
+          (await fetch(url + "/repos")).json(),
+          (await fetch(url + "/followers?per_page=5")).json(),
+          (await fetch(url + "/orgs")).json(),
+        ]);
       const profile = {
         ...profileRes,
         repos: reposRes,
@@ -36,7 +32,7 @@ export default () => {
     };
 
     fetchProfile();
-  }, []);
+  }, [title]);
 
   return (
     <div>
@@ -56,3 +52,5 @@ export default () => {
     </div>
   );
 };
+
+export default ProfilePage;
