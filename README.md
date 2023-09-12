@@ -1,64 +1,33 @@
-## The Project
+## Available Scripts
 
-We're going to create an application that uses the public Github API to render Github users and display information
-about their account.
+In the project directory, you can run:
 
-The application will consist of two pages:
+### `npm start`
 
-1. A Home Page, where I can see a list of users.
-2. A User detail page, where I can view specific information for a user.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The home page will query the [users](https://api.github.com/users) endpoint and render each user. We should:
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- show their avatar
-- show their username
+### `npm test`
 
-When I click on a user, I will be taken to a dedicated user detail page. On that page, I should see:
+Launches the test runner in the interactive watch mode.\
 
-- their repos, which is the main content of the page.
-- their organizations
-- their first 5 followers, and include a count of total followers.
+### `npm run build`
 
-Github provides a rate limit for API users without authentication to a max of 60 requests per hour. You may want to mock
-the response or use a personal access token to fetch the API.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-We have provided you with a **create-react-app** template project, however, please feel free to use whatever
-technologies / frameworks / libraries that you are most comfortable with. We just ask that **this be implemented in
-React**, and not in another framework, like Vue/Angular/Ember/etc.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-**Note:** Please add tests! The project will be considered incomplete if you do not have any tests written.
+### `npm run eject`
 
-## What are we looking for?
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Some questions to think about:
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- How can you make your code reusable?
-- How can we adhere to proper separation of concerns?
-- Are we using modern development practices?
-- Is my page mobile responsive?
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-We would also like to consider the following:
-
-- How can I make it easy for any engineer to create a detail page?
-- How can I handle error cases, like 404s, automatically?
-- All in all: **how can I construct the beginnings of a _system_ that will make other engineers' lives easier?**
-
-## Your Submission
-
-After you have implemented the two pages, please write an overview of what you have implemented, what were any tradeoffs
-you made, and how you would extend this if you had more time. Please include this in the OVERVIEW.md file.
-
-## Conclusion
-
-Please feel free to reach out to the recruiter if you have any questions or if anything is unclear. We're excited to see
-what you come up with! Good luck!
-
-## License
-
-At CodeScreen, we strongly value the integrity and privacy of our assessments. As a result, this repository is under exclusive copyright, which means you **do not** have permission to share your solution to this test publicly (i.e., inside a public GitHub/GitLab repo, on Reddit, etc.). <br>
-
-## Submitting your solution
-
-Please push your changes to the `main branch` of this repository. You can push one or more commits. <br>
-
-Once you are finished with the task, please click the `Submit Solution` link on <a href="https://app.codescreen.com/candidate/63368d71-c591-4386-81be-29a6ceb8261d" target="_blank">this screen</a>.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
