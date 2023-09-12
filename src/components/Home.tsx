@@ -1,16 +1,13 @@
-import React from 'react'
+import React from "react";
 import Users from "./Users";
-import Search from './Search'
+import Search from "./Search";
 function Home() {
-    return (
-        <div>
-            {/* Search component */}
-            <Search/>
-            <Users/>
-            
-            
-        </div>
-    )
+  return (
+    <div>
+      <Search />
+      <Users />
+    </div>
+  );
 }
 
-export default Home
+export default Home;
