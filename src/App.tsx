@@ -1,23 +1,33 @@
-import React from "react";
-
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import Error from "./components/Error";
+import About from "./components/About";
+import Home from "./components/Home";
+import Alert from "./components/Alert";
+import User from "./components/User";
 import "./App.css";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-
 function App() {
   return (
-    <React.Fragment>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="users">
-            <Route path=":title" element={<Profile />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </React.Fragment>
+    <Router>
+      <div className="flex flex-col justify-between h-screen">
+        <NavBar />
+
+        <main className="container mx-auto px-3 pb-12">
+          <Alert />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/user">
+              <Route path=":login_slug" element={<User />} />
+            </Route>
+            <Route path="*" element={<Error />} />
+            <Route path="/notfound" element={<Error />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
-
 export default App;
