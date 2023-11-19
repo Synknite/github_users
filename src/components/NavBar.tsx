@@ -12,7 +12,7 @@ function Navbar(title: NavbarProps) {
         <div className="flex-none px-2 mx-2">
           <FaGithub className="inline pr-2 text-3xl text-purple-700" />
           <Link to="/" className="text-lg font-bold align-middle">
-            {`${title}`}
+            {title}
           </Link>
         </div>
 
