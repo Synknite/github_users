@@ -5,8 +5,8 @@ import { useGithub } from "./context/customHooks";
 function Users() {
   const { users, loading, fetchUsers } = useGithub();
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     fetchUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!loading) {
