@@ -17,7 +17,7 @@ const User = () => {
   useEffect(() => {
     getUser(login_slug);
     getUserRepos(login_slug);
-  }, [getUser, getUserRepos]);
+  }, [getUser, getUserRepos, login_slug]);
   if (loading) {
     return (
       <div className="container">
